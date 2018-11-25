@@ -4,8 +4,7 @@
   "description": "GDG Torino's PWA",
   "main": "index.js",
   "scripts": {
-    "start": "polymer serve",
-    "start:watch": "tsc -w & polymer serve",
+    "start": "tsc -w & polymer serve",
     "build:typescript": "tsc -w",
     "build:polymer": "polymer build",
     "build:prod": "npm run build:polymer && npm run build:typescript",
