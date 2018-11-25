@@ -7,7 +7,6 @@ import '@polymer/paper-icon-button/paper-icon-button';
 import '@polymer/paper-input/paper-input';
 import '../styles/theme';
 
-//@ts-ignore
 @customElement('gdg-app')
 class GdgApp extends LitElement {
 

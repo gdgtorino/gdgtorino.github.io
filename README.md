@@ -27,3 +27,15 @@ The following command starts typescript compilation in watch mode and Polymer's 
 ```bash
 $ npm run start
 ```
+
+To build typescript files once, run:
+
+```bash
+$ npm run build:typescript
+```
+
+To launch a Polymer build, run:
+
+```bash
+$ npm run build:polymer
+```
