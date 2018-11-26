@@ -7,7 +7,9 @@ import '@polymer/paper-icon-button/paper-icon-button';
 import '@polymer/paper-input/paper-input';
 import '../styles/theme';
 
-@customElement('gdg-app')
+declare var countdown: any;
+
+@customElement('gdg-app' as any)
 class GdgApp extends LitElement {
 
     @property() countdown = [
@@ -141,7 +143,7 @@ class GdgApp extends LitElement {
         this.mailChimpForm = this.shadowRoot.querySelector('#mailChimpForm');
     }
 
-    onEmailInputKeypress(event: KeybaordEvent) {
+    onEmailInputKeypress(event: KeyboardEvent) {
         if (event.key === 'Enter') {
             this.subscribe();
         }
