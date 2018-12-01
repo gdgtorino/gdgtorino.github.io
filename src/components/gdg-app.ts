@@ -63,7 +63,7 @@ class GdgApp extends LitElement {
               }
               
               .logo {
-                height: 80px;
+                height: 100px;
                 width: auto;
               }
               
@@ -81,8 +81,9 @@ class GdgApp extends LitElement {
               }
               
               .digits {
-                font-size: 100px;
-                width: 120px;
+                font-size: 60px;
+                width: 80px;
+                text-align: center;
               }
               
               .emailInput {
@@ -90,25 +91,46 @@ class GdgApp extends LitElement {
               }
               
               .countdown-component {
-                margin-right: 36px;
+                margin: 0 18px;
               }
               
               .hidden {
                 display: none;
               }
+              
+              .countdown {
+                margin-bottom: 80px;
+              }
+              
+              .container {
+                padding: 0 16px;
+                min-height: fit-content;
+              }
+              
+              @media (max-width: 500px) {
+                .logo {
+                  height: 80px;
+                }
+              
+                h2 {
+                  font-size: 20px;
+                }
+                
+                .digits {
+                  font-size: 35px;
+                  width: 50px;
+                }
+                
+                .caption {
+                  font-size: 12px;
+                }
+              }
             </style>
             
-            <div class="vertical layout h100 center-center">
+            <div class="vertical layout center h100 container">
+              <div class="flex"></div>
               <div class="mw700 vertical layout start">
                 <img src="../../assets/images/logo.png" class="logo">
-                <div class="horizontal layout">
-                  ${repeat(this.countdown, component => html`
-                    <div class="vertical layout center countdown-component">
-                      <div class="digits">${component.value.toString().padStart(2, '0')}</div>
-                      <div class="caption">${component.displayName}</div>
-                    </div>
-                  `)}
-                </div>
                 <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.
                 Nel frattempo resta aggiornato iscrivendoti alla nostra newsletter!</h2>
                 <paper-input id="emailInput"
@@ -124,6 +146,15 @@ class GdgApp extends LitElement {
                                      @click="${this.subscribe.bind(this)}">
                   </paper-icon-button>
                 </paper-input>
+              </div>
+              <div class="flex"></div>
+              <div class="countdown horizontal layout self-center">
+                ${repeat(this.countdown, component => html`
+                  <div class="vertical layout center countdown-component">
+                    <div class="digits">${component.value.toString().padStart(2, '0')}</div>
+                    <div class="caption">${component.displayName}</div>
+                  </div>
+                `)}
               </div>
             </div>
             
