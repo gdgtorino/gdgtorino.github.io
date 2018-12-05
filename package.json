@@ -7,7 +7,7 @@
     "start": "tsc -w & polymer serve",
     "build:typescript": "tsc -w",
     "build:polymer": "polymer build",
-    "build:prod": "npm run build:polymer && npm run build:typescript",
+    "build:prod": "rm -rf build/ dist/ && tsc && npm run build:polymer",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

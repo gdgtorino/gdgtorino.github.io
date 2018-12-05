@@ -1,6 +1,13 @@
 {
   "entrypoint": "index.html",
   "shell": "dist/components/gdg-app.js",
+  "sources": [
+    "assets/**/*"
+  ],
+  "extraDependencies": [
+    "node_modules/countdown/*",
+    "node_modules/@webcomponents/webcomponentsjs/**"
+  ],
   "builds": [
     {
       "preset": "es6-bundled",
