@@ -130,7 +130,7 @@ class GdgApp extends LitElement {
             <div class="vertical layout center h100 container">
               <div class="flex"></div>
               <div class="mw700 vertical layout start">
-                <img src="../../assets/images/logo.png" class="logo">
+                <img src="../assets/images/logo.png" class="logo">
                 <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.
                 Nel frattempo resta aggiornato iscrivendoti alla nostra newsletter!</h2>
                 <paper-input id="emailInput"
