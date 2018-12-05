@@ -1,37 +1,41 @@
-## Welcome to GitHub Pages
+# gdgtorino.it
 
-You can use the [editor on GitHub](https://github.com/gdgtorino/gdgtorino.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+GDG Torino's PWA
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Prerequisites
 
-### Markdown
+This project requires [node.js](https://nodejs.org) and [npm](https://npmjs.org) as well as the Polymer cli.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To install Polymer CLI globally run:
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+$ npm install -g polymer-cli
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Install
 
-### Jekyll Themes
+To install the necessary dependencies run:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/gdgtorino/gdgtorino.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+```bash
+$ npm install
+```
 
-### Support or Contact
+### Build
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+The following command starts typescript compilation in watch mode and Polymer's development server:
+
+```bash
+$ npm run start
+```
+
+To build typescript files once, run:
+
+```bash
+$ npm run build:typescript
+```
+
+To launch a Polymer build, run:
+
+```bash
+$ npm run build:polymer
+```
