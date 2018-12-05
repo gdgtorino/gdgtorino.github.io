@@ -6,6 +6,7 @@ import '@polymer/iron-icons/iron-icons';
 import '@polymer/paper-icon-button/paper-icon-button';
 import '@polymer/paper-input/paper-input';
 import '../styles/theme';
+import 'countdown/countdown';
 
 declare var countdown: any;
 
