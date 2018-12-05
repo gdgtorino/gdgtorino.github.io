@@ -1,0 +1,12 @@
+{
+  "entrypoint": "index.html",
+  "shell": "dist/components/gdg-app.js",
+  "builds": [
+    {
+      "preset": "es6-bundled",
+      "addServiceWorker": false
+    }
+  ],
+  "moduleResolution": "node",
+  "npm": true
+}
