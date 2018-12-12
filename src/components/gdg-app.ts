@@ -12,45 +12,46 @@ declare var countdown: any;
 @customElement('gdg-app' as any)
 class GdgApp extends LitElement {
 
-    @property() countdown = [
-        {
-            displayName: 'Giorni',
-            value: 0,
-        },
-        {
-            displayName: 'Ore',
-            value: 0,
-        },
-        {
-            displayName: 'Minuti',
-            value: 0,
-        },
-        {
-            displayName: 'Secondi',
-            value: 0,
-        },
-    ];
-    deadline = new Date('2019-01-01T00:00:00');
-    emailInput: PaperInputElement;
-    mailChimpForm: HTMLFormElement;
+  @property() countdown = [
+    {
+      displayName: 'Giorni',
+      value: 0,
+    },
+    {
+      displayName: 'Ore',
+      value: 0,
+    },
+    {
+      displayName: 'Minuti',
+      value: 0,
+    },
+    {
+      displayName: 'Secondi',
+      value: 0,
+    },
+  ];
+  deadline = new Date('2019-01-01T00:00:00');
+  emailInput: PaperInputElement;
+  mailChimpForm: HTMLFormElement;
 
-    constructor() {
-        super();
-        countdown(
-            this.deadline,
-            ts => {
-                this.countdown[0].value = ts.days;
-                this.countdown[1].value = ts.hours;
-                this.countdown[2].value = ts.minutes;
-                this.countdown[3].value = ts.seconds;
-                this.requestUpdate();
-            },
-            countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS,
-        );
-    }
+  constructor() {
+    super();
+    countdown(
+      this.deadline,
+      ts => {
+        this.countdown[0].value = ts.days;
+        this.countdown[1].value = ts.hours;
+        this.countdown[2].value = ts.minutes;
+        this.countdown[3].value = ts.seconds;
+        this.requestUpdate();
+      },
+      countdown.DAYS | countdown.HOURS | countdown.MINUTES | countdown.SECONDS,
+    );
+  }
 
-    render() {
-        return html`
+  render() {
+    // language=HTML
+    return html`
             ${ironFlexLayout}
             
             <style>
@@ -131,7 +132,7 @@ class GdgApp extends LitElement {
               <div class="flex"></div>
               <div class="mw700 vertical layout start">
                 <img src="../../assets/images/logo.png" class="logo">
-                <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.
+                <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.<br>
                 Nel frattempo resta aggiornato iscrivendoti alla nostra newsletter!</h2>
                 <paper-input id="emailInput"
                              label="Email"
@@ -156,35 +157,38 @@ class GdgApp extends LitElement {
                   </div>
                 `)}
               </div>
+              
+              
+              
             </div>
             
             <form id="mailChimpForm"
                   class="hidden"
                   action="https://gdgtorino.us13.list-manage.com/subscribe/post?u=5b856731f80e3cf563201f842&amp;id=a4a45eebb0"
                   method="POST"
-                  target="_blank">
+                  target="_blank"   >
               <input type="hidden" name="EMAIL">
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b856731f80e3cf563201f842_a4a45eebb0" tabindex="-1" value=""></div>
+         <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b856731f80e3cf563201f842_a4a45eebb0" tabindex="-1" value=""></div>
             </form>
         `;
-    }
+  }
 
-    firstUpdated() {
-        this.emailInput = this.shadowRoot.querySelector('#emailInput');
-        this.mailChimpForm = this.shadowRoot.querySelector('#mailChimpForm');
-    }
+  firstUpdated() {
+    this.emailInput = this.shadowRoot.querySelector('#emailInput');
+    this.mailChimpForm = this.shadowRoot.querySelector('#mailChimpForm');
+  }
 
-    onEmailInputKeypress(event: KeyboardEvent) {
-        if (event.key === 'Enter') {
-            this.subscribe();
-        }
+  onEmailInputKeypress(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.subscribe();
     }
+  }
 
-    subscribe() {
-        if (this.emailInput && this.emailInput.validate()) {
-            this.mailChimpForm.querySelector('input').value = this.emailInput.value;
-            this.mailChimpForm.submit();
-        }
+  subscribe() {
+    if (this.emailInput && this.emailInput.validate()) {
+      this.mailChimpForm.querySelector('input').value = this.emailInput.value;
+      this.mailChimpForm.submit();
     }
+  }
 
 }
