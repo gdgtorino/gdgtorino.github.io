@@ -2074,9 +2074,8 @@ define(["exports","meta"],function(_exports,meta){"use strict";Object.defineProp
               }
             </style>
             
-            <div class="vertical layout center h100 container">
-              <div class="flex"></div>
-              <div class="mw700 vertical layout start">
+            <div class="vertical layout center-center h100 container">
+              <div class="mw700 vertical layout">
                 <img src="../../assets/images/logo.png" class="logo">
                 <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.<br>
                 Nel frattempo resta aggiornato iscrivendoti alla nostra newsletter!</h2>
@@ -2093,15 +2092,6 @@ define(["exports","meta"],function(_exports,meta){"use strict";Object.defineProp
                                      @click="${this.subscribe.bind(this)}">
                   </paper-icon-button>
                 </paper-input>
-              </div>
-              <div class="flex"></div>
-              <div class="countdown horizontal layout self-center">
-                ${repeat(this.countdown,component=>html`
-                  <div class="vertical layout center countdown-component">
-                    <div class="digits">${component.value.toString().padStart(2,"0")}</div>
-                    <div class="caption">${component.displayName}</div>
-                  </div>
-                `)}
               </div>
             </div>
             
