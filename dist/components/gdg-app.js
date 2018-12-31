@@ -2075,7 +2075,7 @@ define(["exports","meta"],function(_exports,meta){"use strict";Object.defineProp
             </style>
             
             <div class="vertical layout center-center h100 container">
-              <div class="mw700 vertical layout">
+              <div class="mw700 vertical layout start">
                 <img src="../../assets/images/logo.png" class="logo">
                 <h2>Stiamo realizzando una nuova Progressive Web App che rilasceremo all'inizio del nuovo anno.<br>
                 Nel frattempo resta aggiornato iscrivendoti alla nostra newsletter!</h2>
